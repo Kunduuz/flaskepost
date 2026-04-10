@@ -17,7 +17,7 @@ def send_telegram(msg):
 
 def get_shifts(page):
     # 👉 HIER ggf. anpassen!
-    shifts = page.query_selector_all(".shift-card")
+    shifts = page.query_selector_all(".offer-item-date-time")
 
     results = []
     for s in shifts:
