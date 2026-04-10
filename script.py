@@ -28,7 +28,7 @@ def get_shifts(page):
 
 def main():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         page = browser.new_page()
 
         page.goto("https://portal.flaschenpost.de/")
@@ -37,7 +37,7 @@ def main():
         page.fill('input[type="password"]', PASSWORD)
         page.click('button[type="submit"]')
 
-        page.wait_for_timeout(5000)
+        page.wait_for_load_state("networkidle")
 
         shifts = get_shifts(page)
 
