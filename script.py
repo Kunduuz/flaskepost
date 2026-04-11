@@ -109,7 +109,7 @@ def main():
         # =========================
 
         if diff:
-            msg = "🚐 Neue Schichten:\n\n" + "\n\n".join(diff)
+            msg = "🚐 Neue Schichten scurr scurr:\n\n" + "\n\n".join(diff)
             send_telegram(msg)
 
         # =========================
