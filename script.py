@@ -84,7 +84,8 @@ def main():
         else:
             page.keyboard.press("Enter")
 
-        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(2000)
+        page.wait_for_selector(".offer-item-date-time", timeout=15000)
 
         shifts = get_shifts(page)
 
