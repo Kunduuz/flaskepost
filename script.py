@@ -48,7 +48,7 @@ def main():
         raise ValueError("BOT_TOKEN and CHAT_ID environment variables must be set")
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
 
         page.goto("https://portal.flaschenpost.de/")
